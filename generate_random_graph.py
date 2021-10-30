@@ -22,20 +22,15 @@ def ER(n, p):
 
     return g
 
-print('hello world')
-
-n = 5
+n = 150
 p = 0.4
 G = ER(n, p)
-python_file = open("example.txt", "w")
+python_file = open("reverse_delete_input.txt", "w")
+python_file.write(str(n)+'\n')
 for node1, node2, data in G.edges(data=True):
     data = str(node1) + ' '+ str(node2) + ' ' + str(data['weight']) + '\n'
     python_file.write(data)
 
-#for x in G.edges():
-    #qri = str(x)+' '+str(y)+'\n'
-    #python_file.write(qri)
-    #print(x)
 python_file.close()
 
 pos = nx.spring_layout(G)
