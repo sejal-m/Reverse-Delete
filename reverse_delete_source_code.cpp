@@ -80,7 +80,7 @@ void Graph::reverseDeleteMST()
             adj[u].push_back(v);
             adj[v].push_back(u);
   
-            cout << u << " - " << v <<"\n";
+            cout << " ( "<< u << " - " << v <<" ), weight = "<<edges[i].first<<"\n";
             mst_wt += edges[i].first;
         }
     }

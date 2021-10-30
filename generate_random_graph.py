@@ -17,8 +17,13 @@ def ER(n, p):
     g.add_nodes_from(V)
     g.add_edges_from(E)
     
+    random.seed(10)
+    rand_list = list(range(1, 63))
+    random.shuffle(rand_list)
     for (u, v) in g.edges():
-        g.edges[u,v]['weight'] = random.randint(1,10)
+        i = random.randint(0,len(rand_list) - 1)
+        g.edges[u,v]['weight'] = rand_list[i]
+        i+=1
 
     return g
 
